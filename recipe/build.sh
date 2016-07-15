@@ -27,6 +27,8 @@ fi
              --system-liblzma \
              --system-zlib \
              --no-qt-gui \
+             -- \
+             -DCMAKE_BUILD_TYPE:STRING=Release \
 
 make
 eval ${LIBRARY_SEARCH_VAR}="${PREFIX}/lib" make install

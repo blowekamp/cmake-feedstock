@@ -1,0 +1,15 @@
+set(FILE_NAME "CMakeChangeLog-2.8.12.1")
+set(EXPECTED_SHA256 1bdd59b1208bfcd8714c5257993ec62ac7b602e6ded2db4cf8b91940ae91dea4)
+
+file(DOWNLOAD https://cmake.org/files/v2.8/${FILE_NAME} ${CMAKE_CURRENT_BINARY_DIR}/${FILE_NAME}
+ SHOW_PROGRESS
+ EXPECTED_HASH  SHA256=${EXPECTED_SHA256}
+ STATUS STATUS
+ TLS_VERIFY on )
+
+list( GET STATUS 0 RET )
+list( GET STATUS 1 MESSAGE )
+
+if( NOT RET EQUAL 0 )
+  message(FATAL "Error Downloading file: ${MESSAGE}")
+endif()

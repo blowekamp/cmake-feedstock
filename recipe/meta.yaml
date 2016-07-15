@@ -40,6 +40,7 @@ requirements:        # [unix]
 test:
   commands:
     - cmake --version
+    - cmake -V -P ${RECIPE_DIR}/SSLTest.cmake
 
 about:
   home: http://www.cmake.org/
